@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Executive Study & Growth Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="kicker">Performance Intelligence Suite</p>
+        <h1>Executive Study & Growth Tracker</h1>
+      </div>
+      <div class="date-pill" id="todayDate"></div>
+    </header>
+
+    <main class="layout">
+      <section class="card hero">
+        <h2>Today's Focus Dashboard</h2>
+        <p>
+          Build consistency across study goals, upskilling, and life-admin tasks with
+          streak intelligence and rewards automation.
+        </p>
+        <div class="stats-grid">
+          <article>
+            <h3 id="tasksDone">0</h3>
+            <span>Tasks Completed Today</span>
+          </article>
+          <article>
+            <h3 id="focusMinutes">0</h3>
+            <span>Focus Minutes</span>
+          </article>
+          <article>
+            <h3 id="currentStreak">0</h3>
+            <span>Current Streak (Days)</span>
+          </article>
+          <article>
+            <h3 id="rewardPoints">0</h3>
+            <span>Reward Points</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Create New Task</h2>
+          <span>Day-wise planning + skill trajectory</span>
+        </div>
+        <form id="taskForm" class="task-form">
+          <label>
+            Task Name
+            <input type="text" id="taskName" required placeholder="e.g. Learn Dynamic Programming" />
+          </label>
+          <label>
+            Category
+            <select id="taskCategory">
+              <option value="Study">Study</option>
+              <option value="Skill">Skill Development</option>
+              <option value="Project">Project</option>
+              <option value="Personal">Personal Growth</option>
+            </select>
+          </label>
+          <label>
+            Priority
+            <select id="taskPriority">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </label>
+          <label>
+            Planned Date
+            <input type="date" id="taskDate" required />
+          </label>
+          <label>
+            Focus Minutes
+            <input type="number" id="taskMinutes" min="15" step="15" value="30" required />
+          </label>
+          <button type="submit">Add to Growth Pipeline</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Daily Task Stream</h2>
+          <span>Structured task ownership per day</span>
+        </div>
+        <div id="taskList" class="task-list"></div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>Streak & Rewards Engine</h2>
+          <span>Motivational intelligence for consistency</span>
+        </div>
+        <div class="rewards-panel">
+          <div>
+            <h3>Next Reward Milestone</h3>
+            <p id="nextReward">Complete more tasks to unlock your next level.</p>
+          </div>
+          <div>
+            <h3>Unlocked Badges</h3>
+            <ul id="badgeList" class="badge-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2>7-Day Activity Timeline</h2>
+          <span>Day wise performance visibility</span>
+        </div>
+        <canvas id="weeklyChart" width="900" height="260"></canvas>
+      </section>
+    </main>
+
+    <footer>
+      <p>Designed for high-performance professionals • Strategic productivity built-in.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
